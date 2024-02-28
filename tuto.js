@@ -94,11 +94,7 @@ async function recupererTousMesProjets() {
 }
 recupererTousMesProjets();
 
-// -----------------------------------------------------------------------
-// -----------------------------------------------------------------------
-// -----------------------------------------------------------------------
-// -----------------------------------------------------------------------
-// -----------------------------------------------------------------------
+
 
 // LOGIN
 
@@ -147,6 +143,14 @@ async function handleFormSubmission(event) {
   }
 }
   
+// Sélectionne le formulaire de connexion dans le DOM
+const form = document.getElementById("login");
+// Si le formulaire existe, lui ajoute un écouteur d'événements pour gérer sa soumission
+if (form) {
+  form.addEventListener("submit", handleFormSubmission);
+}
+
+
 // Fonction appelée pour déconnecter l'utilisateur
 const handleLogout = () => {
   // Supprime les informations de l'utilisateur et le token d'authentification du stockage local
@@ -191,16 +195,7 @@ function checkTokenLogin() {
     // if (modifierBtn) modifierBtn.parentNode.removeChild(modifierBtn);
   }
 }
-
  checkTokenLogin()
-
-// Sélectionne le formulaire de connexion dans le DOM
-const form = document.getElementById("login");
-// Si le formulaire existe, lui ajoute un écouteur d'événements pour gérer sa soumission
-if (form) {
-  form.addEventListener("submit", handleFormSubmission);
-}
-
 
 //Fonction pour afficher ou masquer la modale
 function toggleModal(isVisible) {

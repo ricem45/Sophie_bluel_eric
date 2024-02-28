@@ -55,7 +55,6 @@ body {
     background-color: black;
 }
 
-
 .pen{
     border: none;
     color: white;
@@ -338,8 +337,6 @@ footer p {
         display: grid;
         grid-template-columns: 1fr;
     }
-
-   
 
     header {
         flex-wrap: wrap;
