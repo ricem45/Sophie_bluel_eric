@@ -57,11 +57,15 @@ body {
 
 .pen{
     border: none;
-    color: white;
+    color: seagreen;
 }
 
 .pen:hover{
     background-color: transparent;
+    color: seagreen;
+    transform: scale(1.1);
+    transition: 0.5s;
+
 }
 
 .penBis{
