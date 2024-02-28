@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/vnd.icon" href="asset/picture/favicon.ico">
+    <title>sophie-bluel</title>
+</head>
+
+<!-- faire apparaitre barre noire, "mofidier", disparaitre les filtres , login =>logout -->
+
+<body id="top">
+    <div id="admin-bar" class="hidden">
+        <button class="pen open-modal"><span class="penBis"><i class="fa-regular fa-pen-to-square"></i></span>Mode édition</button>
+        
+    </div>
+    <header>
+        <div class="logo">
+            <p class="name">Sophie Bluel</p>
+            <p class="subName">architecte d’intérieur</p>
+        </div>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    <li>Projets</li>
+                </a>
+                <a href="#contact">
+                    <li>contact</li>
+                </a>
+                <a id="login-link" href="login.html">
+                    <li>login</li>
+                </a>
+                <a href="">
+                    <li> <span class="insta"> <i class="fa-brands fa-instagram"></i></span></li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section1">
+            <div class="box1">
+                <img class="Sophie" src="asset/picture/sophie-bluel.png" alt="sophie-bluel">
+            </div>
+            <div class="box2">
+                <h2>Mon projet</h2>
+                <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+                    finale du chantier.</p>
+                <p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+                    couleurs dans le respect de l’esprit des lieux, et le choix adapté des matériaux. Le suivi du
+                    chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+                <p>En cas de besoin, une équipe pluridisciplinaire peut être constituée : architecte DPLG,
+                    décorateur(trice).</p>
+            </div>
+        </section>
+
+        <section class="section2">
+            <h2>Mes Projets</h2>
+            <div class="filtres">
+               
+            </div>
+        </section>
+        <section class="section3">
+            <div class="activites">
+                <!-- Galerie appelée par js
+                <figure>
+                    <img class="activiteimg" src="" alt="">
+                    <figcaption class="infoactivite">Abat-jour Tahina</figcaption>
+                </figure> -->
+
+            </div>
+        </section>
+        
+        <section class="section4">
+            <h2 id="contact">Contact</h2>
+            <h4>Vous avez un projet ? Discutons-en !</h4>
+            <form action="">
+                <p><label for="">Nom</label>
+                    <input class="formtext" type="text" name="name" size="300">
+                </p>
+                <p><label for="">E-mail</label>
+                    <input class="formtext" type="text" name="mail" size="300">
+                </p>
+                <p><label for="">Message</label>
+                    <textarea class="formtext" name="textarea" id="textarea" cols="300" rows="3000"></textarea>
+                </p>
+                <input class="submit" type="submit" value="Envoyer">
+            </form>
+        </section>
+        <p class="backToUp"><a class="arrow" title="Retour en haut de la page" href="#top"><i
+            class="fa-solid fa-angles-up"></i></a></p>
+        </main>
+        <div id="edit-modal" class="hidden"></div>
+
+
+    <footer>
+        <p>Mentions légales</p>
+    </footer>
+    <script src="tuto.js"></script>
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
