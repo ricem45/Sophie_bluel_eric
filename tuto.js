@@ -94,8 +94,6 @@ async function recupererTousMesProjets() {
 }
 recupererTousMesProjets();
 
-
-
 // LOGIN
 
 // Poste des données à l'API
@@ -150,7 +148,6 @@ if (form) {
   form.addEventListener("submit", handleFormSubmission);
 }
 
-
 // Fonction appelée pour déconnecter l'utilisateur
 const handleLogout = () => {
   // Supprime les informations de l'utilisateur et le token d'authentification du stockage local
@@ -176,7 +173,7 @@ function checkTokenLogin() {
   const loginLink = document.getElementById("login-link");
   const adminBar = document.getElementById("admin-bar");
   const allFilterBtn = document.querySelector(".filtres");
-  // const modifierBtn = document.getElementById("add-project-btn");
+  const modifierBtn = document.getElementById("add-project-btn");
 
   // Si un token est présent, ajuste l'interface pour un utilisateur connecté
   if (tokenAuth) {
@@ -184,7 +181,7 @@ function checkTokenLogin() {
     // Rend visible la barre d'administration et le bouton de modification, et cache le bouton de filtre
     if (adminBar) adminBar.classList.remove("hidden");
     if (allFilterBtn) allFilterBtn.classList.add("hidden");
-    // if (modifierBtn) modifierBtn.classList.remove("hidden");
+    if (modifierBtn) modifierBtn.classList.remove("hidden");
     // Ajoute un écouteur d'événement pour gérer la déconnexion
     loginLink.addEventListener("click", handleLogout);
   } else {
@@ -192,7 +189,7 @@ function checkTokenLogin() {
     loginLink.textContent = "login"; // Garde ou remet le texte du lien en "login"
     // Cache la barre d'administration et le bouton de modification
     if (adminBar) adminBar.classList.add("hidden");
-    // if (modifierBtn) modifierBtn.parentNode.removeChild(modifierBtn);
+    if (modifierBtn) modifierBtn.parentNode.removeChild(modifierBtn);
   }
 }
  checkTokenLogin()
@@ -208,16 +205,33 @@ function toggleModal(isVisible) {
   }
 }
 
+openModal()
+
 function openModal() {
   // Sélectionne tous les boutons qui ouvrent la modale
-  const allEditBtn = document.querySelector(".open-modal");
+  const allEditBtn = document.querySelectorAll(".open-modal");
   // Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
 
   allEditBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       toggleModal(true); // Affiche la modale
+
+      // Clone le contenu existant des projets pour l'afficher dans la modale
+
+      const existingProjects = document
+        .querySelector(".projets")
+        .cloneNode(true);
+      const modalProjects = document.getElementById("existing-projects");
+      modalProjects.innerHTML = ""; // Vide le contenu actuel
+      // Pour chaque image dans les projets clonés, crée un conteneur et l'ajoute à la modale
+      existingProjects.querySelectorAll("img").forEach((img) => {
+        const imgContainer = document.createElement("div");
+        imgContainer.setAttribute("class", "img-container");
+        imgContainer.setAttribute("data-id", img.closest("figure").dataset.id);
+        imgContainer.innerHTML = `${img.outerHTML}<button class="delete-icon"><i class="fa-solid fa-trash-can"></i></button>`;
+        modalProjects.appendChild(imgContainer);
+      });
     });
   });
 }
-// test
-openModal()
+
