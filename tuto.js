@@ -205,22 +205,19 @@ function toggleModal(isVisible) {
   }
 }
 
-openModal()
-
 function openModal() {
   // Sélectionne tous les boutons qui ouvrent la modale
   const allEditBtn = document.querySelectorAll(".open-modal");
-  // Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
 
+  // Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
   allEditBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       toggleModal(true); // Affiche la modale
-
-      // Clone le contenu existant des projets pour l'afficher dans la modale
-
+      
+      // Clone le contenu existant des projets pour l'afficher dans la modale 
       const existingProjects = document
-        .querySelector(".projets")
-        .cloneNode(true);
+      .querySelector(".projets")
+      .cloneNode(true);
       const modalProjects = document.getElementById("existing-projects");
       modalProjects.innerHTML = ""; // Vide le contenu actuel
       // Pour chaque image dans les projets clonés, crée un conteneur et l'ajoute à la modale
@@ -234,4 +231,4 @@ function openModal() {
     });
   });
 }
-
+openModal()

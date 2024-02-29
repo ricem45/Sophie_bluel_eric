@@ -13,7 +13,7 @@
 <!-- faire apparaitre barre noire, "mofidier", disparaitre les filtres , login =>logout -->
 
 <body id="top">
-    <div id="admin-bar" class="hidden">
+    <div id="admin-bar" class="barAdmin hidden">
         <button class="pen open-modal"><span class="penBis"><i class="fa-regular fa-pen-to-square"></i></span>Mode
             édition</button>
 
@@ -61,7 +61,8 @@
             <h2>Mes Projets</h2>
             <div class="filtres">
             </div>
-            <button class="pen open-modal"><span class="penBis"><i class="fa-regular fa-pen-to-square"></i></span>Mode
+            <button id="add-project-btn" class="pen open-modal hidden"><span class="penBis"><i
+                        class="fa-regular fa-pen-to-square"></i></span>Mode
                 édition</button>
         </section>
         <section class="section3">
@@ -71,7 +72,6 @@
                     <img class="activiteimg" src="" alt="">
                     <figcaption class="infoactivite">Abat-jour Tahina</figcaption>
                 </figure> -->
-
             </div>
         </section>
 
@@ -94,8 +94,14 @@
         <p class="backToUp"><a class="arrow" title="Retour en haut de la page" href="#top"><i
                     class="fa-solid fa-angles-up"></i></a></p>
     </main>
-    <div id="edit-modal" class="hidden"></div>
+    
+    <section id="edit-modal" class="hidden">
+        <div id="existing-projects" class="projets">
+            
+        </div>
+        
 
+    </section>
 
     <footer>
         <p>Mentions légales</p>
