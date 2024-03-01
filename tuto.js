@@ -85,7 +85,7 @@ async function recupererTousMesProjets() {
   console.log("Page entièrement chargée");
 
   const works = await fetchAPI("http://localhost:5678/api/works");
-  const sectionProjet = document.querySelector(".activites");
+  const sectionProjet = document.querySelector(".projets");
  if (works && sectionProjet)
   displayWorks(works, sectionProjet);
 
@@ -205,22 +205,19 @@ function toggleModal(isVisible) {
   }
 }
 
-openModal()
-
 function openModal() {
   // Sélectionne tous les boutons qui ouvrent la modale
   const allEditBtn = document.querySelectorAll(".open-modal");
-  // Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
 
+  // Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
   allEditBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       toggleModal(true); // Affiche la modale
-
-      // Clone le contenu existant des projets pour l'afficher dans la modale
-
+      
+      // Clone le contenu existant des projets pour l'afficher dans la modale 
       const existingProjects = document
-        .querySelector(".projets")
-        .cloneNode(true);
+      .querySelector(".projets")
+      .cloneNode(true);
       const modalProjects = document.getElementById("existing-projects");
       modalProjects.innerHTML = ""; // Vide le contenu actuel
       // Pour chaque image dans les projets clonés, crée un conteneur et l'ajoute à la modale
@@ -234,4 +231,32 @@ function openModal() {
     });
   });
 }
+openModal()
 
+const closeModal = () => {
+  // Sélectionne les boutons de fermeture de la modale
+  const closeModalButtons = document.querySelectorAll(
+    "#close-modal, #close-modal-form"
+  );
+  // Ajoute un écouteur d'événement sur chaque bouton pour fermer la modale
+  closeModalButtons.forEach((button) => {
+    button.addEventListener("click", () => toggleModal(false));
+  });
+  const editModal = document.getElementById("edit-modal");
+  // Ferme la modale si l'utilisateur clique en dehors du contenu de la modale
+  if (editModal) {
+    editModal.addEventListener("click", (event) => {
+      const modalContent = document.querySelector(".modal-content");
+      // const modalContentForm = document.querySelector(".modal-content-form");
+      if (
+        !modalContent.contains(event.target)
+        // &&
+        // !modalContentForm.contains(event.target)
+      ) {
+        toggleModal(false);
+      }
+    });
+  }
+};
+
+closeModal()
