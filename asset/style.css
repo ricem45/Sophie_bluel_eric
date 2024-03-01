@@ -304,7 +304,8 @@ footer p {
 .modal {
     background-color: rgb(248, 248, 228);;
     position: relative;
-    width: 50%;
+    max-width: 850px;
+    width: auto;
     height: 75%;
 }
 
@@ -320,6 +321,8 @@ footer p {
 #existing-projects{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 5px
+    ;
     gap: 10px;
 }
 
@@ -350,7 +353,7 @@ footer p {
         margin-top: 0;
     }
 
-    .activites {
+    .projets {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -364,7 +367,7 @@ footer p {
         width: 50%;
     }
 
-    .activites {
+    .projets {
         display: grid;
         grid-template-columns: 1fr;
     }
