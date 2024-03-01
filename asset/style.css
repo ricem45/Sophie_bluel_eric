@@ -45,7 +45,11 @@ body {
     background-color: rgb(248, 248, 228);
 }
 
+<<<<<<< HEAD
 .barAdmin {
+=======
+.barAdmin{
+>>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
     position: fixed;
     display: flex;
     justify-content: center;
@@ -291,6 +295,7 @@ footer p {
     margin-top: 100px;
 }
 
+<<<<<<< HEAD
 #edit-modal {
     background-color: rgba(77, 77, 77, 0.9);
     display: flex;
@@ -304,10 +309,25 @@ footer p {
 .modal {
     background-color: rgb(248, 248, 228);;
     position: relative;
+=======
+#edit-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid red;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(77, 77, 77, 0.9);
+}
+
+.projets{
+    border: solid blueviolet;
+>>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
     width: 50%;
     height: 75%;
 }
 
+<<<<<<< HEAD
 #close-modal {
     position: absolute;
     right: 10px;
@@ -324,11 +344,13 @@ footer p {
 }
 
 .hidden {
+=======
+.hidden{
+>>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
     visibility: hidden;
 }
 
 @keyframes slide {
-
     0%,
     100% {
         transform: translate(0, 0);
@@ -374,4 +396,9 @@ footer p {
         flex-wrap: wrap;
         gap: 20px
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
