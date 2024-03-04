@@ -291,7 +291,7 @@ footer p {
 }
 
 #edit-modal {
-    background-color: rgba(77, 77, 77, 0.9);
+    background-color: rgba(77, 77, 77, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
