@@ -233,6 +233,9 @@ function openModal() {
 }
 openModal()
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
 
 const closeModal = () => {
   // Sélectionne les boutons de fermeture de la modale
@@ -261,5 +264,8 @@ const closeModal = () => {
 };
 
 closeModal()
+<<<<<<< HEAD
 =======
 >>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
+=======
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab

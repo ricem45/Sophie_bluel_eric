@@ -46,10 +46,14 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .barAdmin {
 =======
 .barAdmin{
 >>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
+=======
+.barAdmin {
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
     position: fixed;
     display: flex;
     justify-content: center;
@@ -197,7 +201,6 @@ button:hover {
     gap: 20px;
 }
 
-
 figure {
     width: 100%;
     max-width: 270px;
@@ -296,8 +299,11 @@ footer p {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
 #edit-modal {
-    background-color: rgba(77, 77, 77, 0.9);
+    background-color: rgba(77, 77, 77, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,8 +313,13 @@ footer p {
 }
 
 .modal {
-    background-color: rgb(248, 248, 228);;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+    background-color: rgb(248, 248, 228);
     position: relative;
+<<<<<<< HEAD
 =======
 #edit-modal{
     display: flex;
@@ -328,29 +339,73 @@ footer p {
 }
 
 <<<<<<< HEAD
+=======
+    max-width: 600px;
+    width: auto;
+    border-radius: 10px;
+}
+
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
 #close-modal {
     position: absolute;
     right: 10px;
+    top: 5px;
     color: red;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
     cursor: pointer;
 }
 
-#existing-projects{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px;
+.gallery {
+    text-align: center;
+    font-size: xx-large;
+    margin: 30px 0 30px 0;
 }
 
+#existing-projects {
+    border-bottom: solid gray 0.5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 30px;
+    padding: 5px 5px 50px 5px;
+    gap: 20px 10px;
+}
+
+.delete-icon {
+    position: absolute;
+    font-size: small;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 0;
+    margin: 5px 0 0 -25px;
+    padding: 5px;
+}
+
+.delete-icon:hover {
+    color: black;
+    background-color: white;
+}
+
+.add {
+    margin-bottom: 50px;
+    width: 40%;
+}
+
+/* <i class="fa-solid fa-up-down-left-right"></i> */
+
 .hidden {
+<<<<<<< HEAD
 =======
 .hidden{
 >>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
+=======
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
     visibility: hidden;
 }
 
 @keyframes slide {
+
     0%,
     100% {
         transform: translate(0, 0);
@@ -373,7 +428,7 @@ footer p {
         margin-top: 0;
     }
 
-    .activites {
+    .projets {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -387,7 +442,7 @@ footer p {
         width: 50%;
     }
 
-    .activites {
+    .projets {
         display: grid;
         grid-template-columns: 1fr;
     }
@@ -397,8 +452,12 @@ footer p {
         gap: 20px
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 
 >>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
+=======
+}
+>>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
