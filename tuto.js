@@ -232,10 +232,6 @@ function openModal() {
   });
 }
 openModal()
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
 
 const closeModal = () => {
   // Sélectionne les boutons de fermeture de la modale
@@ -251,21 +247,203 @@ const closeModal = () => {
   if (editModal) {
     editModal.addEventListener("click", (event) => {
       const modalContent = document.querySelector(".modal-content");
-      // const modalContentForm = document.querySelector(".modal-content-form");
+     const modalContentForm = document.querySelector(".modal-content-form");
       if (
         !modalContent.contains(event.target)
-        // &&
-        // !modalContentForm.contains(event.target)
+        &&
+        !modalContentForm.contains(event.target)
       ) {
         toggleModal(false);
       }
     });
   }
 };
-
 closeModal()
-<<<<<<< HEAD
-=======
->>>>>>> 2dbd166fd815ba71ada3832134c6cb9ad8e8bc97
-=======
->>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
+
+
+const openAddPhotoModal = () => {
+  const addPhotoButton = document.getElementById("add-photo-form");
+  if (addPhotoButton) {
+    addPhotoButton.addEventListener("click", () => {
+      const modalContent = document.querySelector(".modal-content");
+      const modalContentForm = document.querySelector(".modal-content-form");
+      modalContent.classList.add("hidden");
+      modalContentForm.classList.remove("hidden");
+    });
+  }
+};
+openAddPhotoModal()
+
+const backFormModal = () => {
+  const backFormModalButton = document.getElementById("back-form-modal");
+  if (backFormModalButton) {
+    backFormModalButton.addEventListener("click", () => {
+      const modalContent = document.querySelector(".modal-content");
+      const modalContentForm = document.querySelector(".modal-content-form");
+      modalContent.classList.remove("hide");
+      modalContentForm.classList.add("hide");
+    });
+  }
+};
+
+// backFormModal()
+
+// Supprime un projet du DOM
+const deleteProjectFromDOM = (projectId) => {
+  // Sélectionne l'élément du projet dans le modal d'édition par son data-id
+  const modalProject = document.querySelector(
+    `#existing-projects .img-container[data-id="${projectId}"]`
+  );
+
+  // Sélectionne l'élément du projet dans la galerie principale par son data-id
+  const galleryProject = document.querySelector(
+    `.projets figure[data-id="${projectId}"]`
+  );
+
+  // Si l'élément existe dans le modal, le supprime du DOM
+  if (modalProject) {
+    modalProject.remove();
+  }
+
+  // Si l'élément existe dans la galerie, le supprime du DOM
+  if (galleryProject) {
+    galleryProject.remove();
+  }
+};
+
+// Attache l'écouteur d'événements pour supprimer des projets
+const deleteWorks = () => {
+  // Sélectionne l'élément conteneur pour les projets existants
+  const deleteExistingProjects = document.getElementById("existing-projects");
+
+  // Si l'élément existe, attache un écouteur d'événements de clic
+  if (deleteExistingProjects) {
+    deleteExistingProjects.addEventListener("click", async function (event) {
+      // Empêche le comportement par défaut et la propagation de l'événement
+      event.preventDefault();
+      event.stopPropagation();
+      // Trouve l'élément img-container le plus proche du clic, s'il existe
+      const imgContainer = event.target.closest(".img-container");
+      // Vérifie si le clic a été fait sur une icône de suppression
+      const deleteIcon = event.target.closest(".delete-icon");
+
+      // Si un icône de suppression a été cliqué dans un conteneur d'image
+      if (deleteIcon && imgContainer) {
+        // Récupère l'ID du projet à partir de l'attribut data-id
+        const projectId = imgContainer.dataset.id;
+        // Récupère le token d'authentification stocké localement
+        const token = localStorage.getItem("token");
+
+        // Effectue une requête DELETE au serveur pour supprimer le projet
+        const response = await fetch(
+          `http://localhost:5678/api/works/${projectId}`,
+          {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        // Si la requête réussit, supprime le projet du DOM et affiche un message
+        if (response.ok) {
+          deleteProjectFromDOM(projectId);
+          console.log("Projet supprimé avec succès!");
+        }
+      }
+    });
+  }
+};
+deleteWorks();
+// Ajoute un projet au DOM
+const addProjectToDOM = (project) => {
+  const newFigure = createFigure(project);
+  const sectionProjet = document.querySelector(".projets");
+  sectionProjet.appendChild(newFigure);
+
+  const imgContainer = document.createElement("div");
+  imgContainer.setAttribute("class", "img-container");
+  imgContainer.setAttribute("data-id", project.id);
+  imgContainer.innerHTML = `${
+    newFigure.querySelector("img").outerHTML
+  }<button class="delete-icon"><i class="fa-solid fa-trash-can"></i></button>`;
+
+  const modalProjects = document.getElementById("existing-projects");
+  modalProjects.appendChild(imgContainer);
+};
+
+// FORMULAIRE D'AJOUT DE PROJET
+
+// Validation et envoi du formulaire d'ajout de projet
+const formPostProject = document.querySelector("#add-photo-form");
+if (formPostProject) {
+  formPostProject.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const imageUpload = document.getElementById("image").files[0];
+    const projectTitle = document.getElementById("title").value;
+    const projectCategory = document.getElementById("project-category").value;
+
+    if (!imageUpload || !projectTitle || !projectCategory) {
+      document.getElementById("form-error-message").classList.remove("hidden");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", imageUpload);
+    formData.append("title", projectTitle);
+    formData.append("category", projectCategory);
+
+    const token = localStorage.getItem("token");
+    const response = await fetch("http://localhost:5678/api/works", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    if (response.ok) {
+      const successMessage = document.getElementById("form-success-message");
+      successMessage.classList.remove("hidden");
+      setTimeout(function () {
+        successMessage.classList.add("hidden");
+        toggleModal(false);
+      }, 1000);
+      const newProject = await response.json();
+      addProjectToDOM(newProject);
+    } else {
+      alert("Une erreur s'est produite. Veuillez réessayer.");
+    }
+  });
+}
+
+// Téléchargement de l'image
+const uploadImage = () => {
+  const imageUploadButton = document.getElementById("image-upload-btn");
+  const imageInputElement = document.getElementById("image");
+  if (imageUploadButton && imageInputElement) {
+    imageUploadButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      imageInputElement.click();
+    });
+    imageInputElement.addEventListener("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const imgElem = document.getElementById("uploaded-image");
+          imgElem.src = e.target.result;
+          imgElem.style.display = "block";
+          document.getElementById("image-upload-icon").style.display = "none";
+          document.getElementById("image-upload-btn").style.display = "none";
+          document.getElementById("file-info-text").style.display = "none";
+          imgElem.addEventListener("click", () => {
+            imageInputElement.click();
+          });
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+};

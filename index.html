@@ -2,122 +2,162 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/vnd.icon" href="asset/picture/favicon.ico">
-    <title>sophie-bluel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/vnd.icon" href="assets/images/favicon.ico">
+  <title>sophie-bluel</title>
 </head>
 
-<!-- faire apparaitre barre noire, "mofidier", disparaitre les filtres , login =>logout -->
-
 <body id="top">
-    <div id="admin-bar" class="barAdmin hidden">
-        <button class="pen open-modal"><span class="penBis"><i class="fa-regular fa-pen-to-square"></i></span>Mode
-            édition</button>
+  <div id="admin-bar" class="barAdmin hidden">
+    <button class="pen open-modal"><span class="penBis"><i class="fa-regular fa-pen-to-square"></i></span>Mode
+      édition</button>
 
+  </div>
+  <header>
+    <div class="logo">
+      <p class="name">Sophie Bluel</p>
+      <p class="subName">architecte d’intérieur</p>
     </div>
-    <header>
-        <div class="logo">
-            <p class="name">Sophie Bluel</p>
-            <p class="subName">architecte d’intérieur</p>
-        </div>
-        <nav>
-            <ul>
-                <a href="index.html">
-                    <li>Projets</li>
-                </a>
-                <a href="#contact">
-                    <li>contact</li>
-                </a>
-                <a id="login-link" href="login.html">
-                    <li>login</li>
-                </a>
-                <a href="">
-                    <li> <span class="insta"> <i class="fa-brands fa-instagram"></i></span></li>
-                </a>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="section1">
-            <div class="box1">
-                <img class="Sophie" src="asset/picture/sophie-bluel.png" alt="sophie-bluel">
-            </div>
-            <div class="box2">
-                <h2>Mon projet</h2>
-                <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
-                    finale du chantier.</p>
-                <p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
-                    couleurs dans le respect de l’esprit des lieux, et le choix adapté des matériaux. Le suivi du
-                    chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-                <p>En cas de besoin, une équipe pluridisciplinaire peut être constituée : architecte DPLG,
-                    décorateur(trice).</p>
-            </div>
-        </section>
+    <nav>
+      <ul>
+        <a href="index.html">
+          <li>Projets</li>
+        </a>
+        <a href="#contact">
+          <li>contact</li>
+        </a>
+        <a id="login-link" href="login.html">
+          <li>login</li>
+        </a>
+        <a href="">
+          <li> <span class="insta"> <i class="fa-brands fa-instagram"></i></span></li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="section1">
+      <div class="box1">
+        <img class="Sophie" src="assets/images/sophie-bluel.png" alt="sophie-bluel">
+      </div>
+      <div class="box2">
+        <h2>Mon projet</h2>
+        <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+          finale du chantier.</p>
+        <p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+          couleurs dans le respect de l’esprit des lieux, et le choix adapté des matériaux. Le suivi du
+          chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+        <p>En cas de besoin, une équipe pluridisciplinaire peut être constituée : architecte DPLG,
+          décorateur(trice).</p>
+      </div>
+    </section>
 
-        <section class="section2">
-            <h2>Mes Projets</h2>
-            <div class="filtres">
-            </div>
-            <button id="add-project-btn" class="pen open-modal hidden"><span class="penBis"><i
-                        class="fa-regular fa-pen-to-square"></i></span>Mode
-                édition</button>
-        </section>
-        <section class="section3">
-            <div class="projets">
-                <!-- Galerie appelée par js
+    <section class="section2">
+      <h2>Mes Projets</h2>
+      <div class="filtres">
+      </div>
+      <button id="add-project-btn" class="pen open-modal hidden"><span class="penBis"><i
+            class="fa-regular fa-pen-to-square"></i></span>Mode
+        édition</button>
+    </section>
+    <section class="section3">
+      <div class="projets">
+        <!-- Galerie appelée par js
                 <figure>
                     <img src="url" alt="img">
                     <figcaption>nom de l'image</figcaption>
                 </figure> -->
-            </div>
-        </section>
-
-        <section class="section4">
-            <h2 id="contact">Contact</h2>
-            <h4>Vous avez un projet ? Discutons-en !</h4>
-            <form action="">
-                <p><label for="">Nom</label>
-                    <input class="formtext" type="text" name="name" size="300">
-                </p>
-                <p><label for="">E-mail</label>
-                    <input class="formtext" type="text" name="mail" size="300">
-                </p>
-                <p><label for="">Message</label>
-                    <textarea class="formtext" name="textarea" id="textarea" cols="300" rows="3000"></textarea>
-                </p>
-                <input class="submit" type="submit" value="Envoyer">
-            </form>
-        </section>
-        <p class="backToUp"><a class="arrow" title="Retour en haut de la page" href="#top"><i
-                    class="fa-solid fa-angles-up"></i></a></p>
-    </main>
-<<<<<<< HEAD
-    <div id="edit-modal" class="hidden"></div>
-
-=======
-
-    <section class="projets">
+      </div>
     </section>
 
-    <div id="edit-modal" class="hidden">
-        <div class="modal modal-content">
-            <p id="close-modal">X</p>
-            <p class="gallery">Galerie photo</p>
-            <div id="existing-projects">
-            </div>
-            <button class="add">Ajouter une photo</button>
-        </div>
-    </div>
->>>>>>> f57784bf0a02180fde38efb624ec779129c7d2ab
+    <section class="section4">
+      <h2 id="contact">Contact</h2>
+      <h4>Vous avez un projet ? Discutons-en !</h4>
+      <form action="">
+        <p><label for="">Nom</label>
+          <input class="formtext" type="text" name="name" size="300">
+        </p>
+        <p><label for="">E-mail</label>
+          <input class="formtext" type="text" name="mail" size="300">
+        </p>
+        <p><label for="">Message</label>
+          <textarea class="formtext" name="textarea" id="textarea" cols="300" rows="3000"></textarea>
+        </p>
+        <input class="submit" type="submit" value="Envoyer">
+      </form>
+    </section>
+    <p class="backToUp"><a class="arrow" title="Retour en haut de la page" href="#top"><i
+          class="fa-solid fa-angles-up"></i></a></p>
+  </main>
 
-    <footer>
-        <p>Mentions légales</p>
-    </footer>
-    <script src="tuto.js"></script>
-    <!-- <script src="script.js"></script> -->
+
+  <footer>
+    <p>Mentions légales</p>
+  </footer>
+
+  <!-- Bloc modal -->
+  <div id="edit-modal" class=" hidden">
+
+    <!-- premiere modal -->
+    <div class="modal modal-content">
+      <p id="close-modal">X</p>
+      <p class="gallery">Galerie photo</p>
+      <div id="existing-projects"></div>
+      <button id="add-photo-form">
+        <p>Ajouter une photo</p>
+      </button>
+    </div>
+
+    <!-- deuxième modal -->
+    <div class="modal modal-content-form">
+      <div class="back-and-close-form">
+        <button class="back-btn" id="back-form-modal">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="close-btn" id="close-modal-form">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <h3>Ajout photo</h3>
+      <form id="add-photo-form">
+        <div class="custom-file-upload" id="image-upload-container">
+          <i class="fa-regular fa-image" id="image-upload-icon"></i>
+          <label for="image"><button id="image-upload-btn">+ ajouter photo</button></label>
+          <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" style="display: none" />
+          <p id="file-info-text">jpg, png: 4 mo max</p>
+          <img id="uploaded-image" src="" alt="Uploaded Image" style="display: none" />
+        </div>
+
+        <label for="title">Titre</label>
+        <input type="text" id="title" name="title" />
+
+        <label for="project-category">Catégorie</label>
+        <select id="project-category" name="category">
+          <option value="" selected></option>
+          <option value="1">Objets</option>
+          <option value="2">Appartements</option>
+          <option value="3">Hotels & restaurants</option>
+        </select>
+        <div class="line">
+          <div id="form-error-message" class="hidden">
+            Veuillez remplir tous les champs.
+          </div>
+          <div id="form-success-message" class="form-success hidden">
+            Travail ajouté avec succès !
+          </div>
+        </div>
+
+        <button id="btn-valider" class="submit-image" type="submit">
+          Valider
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="tuto.js"></script>
+
 </body>
 
 </html>
