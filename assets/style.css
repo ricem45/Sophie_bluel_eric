@@ -293,7 +293,7 @@ footer p {
 /* grande modal */
 #edit-modal {
     background-color: rgba(77, 77, 77, 0.8);
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 100%;
 }
@@ -301,13 +301,10 @@ footer p {
 /* première & deuxième modal*/
 .modal {
     border: solid red;
-    width: 600px;
-    height: 600px;
     background-color: rgb(248, 248, 228);
     padding: 0 50px;
     position:absolute;
-    top: 200px;
-    left: 200px;
+    inset: 20%;
     width: auto;
     border-radius: 10px;
 }
