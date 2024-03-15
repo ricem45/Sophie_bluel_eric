@@ -300,29 +300,30 @@ footer p {
 
 /* première & deuxième modal*/
 .modal {
-    border: solid red;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(248, 248, 228);
-    padding: 0 50px;
-    position:absolute;
-    inset: 20%;
-    width: auto;
     border-radius: 10px;
+    padding: 0 50px;
+    position: absolute;
+    inset: 30%;
+    width: 50%;
+    max-width: 700px;
+    height: 600px;
+    margin: auto;
 }
 
 #close-modal {
     position: absolute;
     right: 10px;
     top: 5px;
-    color: red;
-    font-size: x-large;
-    font-weight: bold;
     cursor: pointer;
 }
 
 .gallery {
     text-align: center;
     font-size: xx-large;
-    margin: 30px 0 30px 0;
+    margin: 10px 0;
 }
 
 #existing-projects {
@@ -351,14 +352,26 @@ footer p {
 }
 
 #add-photo-form {
-    margin-bottom: 50px;
-    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* <i class="fa-solid fa-up-down-left-right"></i> */
+.back-and-close-form {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+h3 {
+    text-align: center;
+}
 
 .hidden {
-    visibility: hidden;
+    display: none;
+}
+
+.hide {
+    display: none;
 }
 
 @keyframes slide {

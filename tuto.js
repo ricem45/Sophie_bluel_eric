@@ -260,19 +260,18 @@ const closeModal = () => {
 };
 closeModal()
 
-
 const openAddPhotoModal = () => {
   const addPhotoButton = document.getElementById("add-photo-form");
   if (addPhotoButton) {
     addPhotoButton.addEventListener("click", () => {
       const modalContent = document.querySelector(".modal-content");
       const modalContentForm = document.querySelector(".modal-content-form");
-      modalContent.classList.add("hidden");
-      modalContentForm.classList.remove("hidden");
+      modalContent.classList.add("hide");
+      modalContentForm.classList.remove("hide");
     });
   }
 };
-openAddPhotoModal()
+openAddPhotoModal();
 
 const backFormModal = () => {
   const backFormModalButton = document.getElementById("back-form-modal");
@@ -286,7 +285,7 @@ const backFormModal = () => {
   }
 };
 
-// backFormModal()
+ backFormModal()
 
 // Supprime un projet du DOM
 const deleteProjectFromDOM = (projectId) => {
@@ -310,6 +309,7 @@ const deleteProjectFromDOM = (projectId) => {
     galleryProject.remove();
   }
 };
+
 
 // Attache l'écouteur d'événements pour supprimer des projets
 const deleteWorks = () => {
@@ -372,6 +372,8 @@ const addProjectToDOM = (project) => {
   modalProjects.appendChild(imgContainer);
 };
 
+addProjectToDOM()
+
 // FORMULAIRE D'AJOUT DE PROJET
 
 // Validation et envoi du formulaire d'ajout de projet
@@ -418,9 +420,11 @@ if (formPostProject) {
   });
 }
 
+
 // Téléchargement de l'image
 const uploadImage = () => {
   const imageUploadButton = document.getElementById("image-upload-btn");
+  console.log(imageUploadButton);
   const imageInputElement = document.getElementById("image");
   if (imageUploadButton && imageInputElement) {
     imageUploadButton.addEventListener("click", (e) => {
@@ -447,3 +451,23 @@ const uploadImage = () => {
     });
   }
 };
+uploadImage()
+
+
+function toggleAdd () {
+  const addPicture = document.getElementById("add-photo-form");
+  const modalContent = document.querySelector(".modal-content");
+  const backToModal = document.getElementById("back-form-modal");
+  const modalForm = document.querySelector(".modal-content-form")
+  if (modalContent) {
+    addPicture.addEventListener("click", ()=>{
+    modalContent.classList.add("hidden"); 
+      })
+  }
+  if(modalForm){
+    backToModal.addEventListener("click", ()=> {
+      modalContent.classList.remove("hidden")
+    })
+  }
+  }
+  toggleAdd () ;
